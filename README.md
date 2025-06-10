@@ -1,38 +1,94 @@
-# Database-Analytics
 
-#Airport Authority Data Analysis 
+# Airport Authority Data Analysis Dashboard
 
-Project Overview:-
-This project presents an analysis of U.S. domestic flight operations from 2014 to 2018, focusing on flight volumes, delays, ground processing times, and passenger satisfaction. The objective is to provide actionable insights to airport management using data visualization. An interactive dashboard was developed using Power BI to make the data exploration intuitive and informative.
+This project presents a comprehensive analysis of flight operations, delays, ground processing time, and inferred passenger satisfaction using U.S. airline data from 2014 to 2018. It is designed to help airport authorities gain insights into operational efficiency and passenger experience via a user-friendly Power BI dashboard.
 
-Dataset:-
-The dataset used for this project is Kaggle’s Airline Delay and Cancellation Data (2009–2018). It contains millions of flight records, capturing detailed information about flight timings, delays, cancellations, and causes. For our analysis, we focused on data from 2014 to 2018 to observe patterns and trends over time.
+---
 
-Objectives:-
-The key goals of this analysis were to:
-1. Examine the total number of flights and their year-over-year growth,
-2. Identify seasonal and cause-based delay trends,
-3. Measure ground processing time efficiency,
-4. Estimate passenger satisfaction using a calculated proxy score (since direct feedback was not available),
-5. And present all insights in a clean and user-friendly Power BI dashboard.
+## Project Overview
 
-Methodology:-
-The data was first cleaned and transformed in SQL Server. All columns were assigned the correct data types, missing values were handled, and calculated fields were added—such as ground processing time, which was derived from Taxi-In, Taxi-Out, and Delay columns. A proxy satisfaction score (1 to 5 scale) was created based on operational delays, cancellations, and causes. Finally, we developed an interactive Power BI dashboard with filters, cards, line charts, and drill-down options.
+- **Goal**: Deliver actionable insights into flight volumes, delays, and operational performance over five years.
+- **Dataset**: [Kaggle – Airline Delay and Cancellation Data (2009–2018)](https://www.kaggle.com/datasets/yuanyuwendymu/airline-delay-and-cancellation-data-2009-2018)
+- **Use Case**: Designed to assist airport managers and decision-makers in identifying trends, improving processes, and enhancing customer satisfaction.
 
-Key Insights:-
-Our analysis revealed a sharp increase in total flights in 2018 compared to previous years, likely due to economic growth and expansion of airline networks. Delay patterns showed consistent peaks during summer and December holiday periods. The average ground processing time across all flights was 59.1 minutes, which aligns well with industry standards. Airline-related cancellations and delays were found to have the most negative impact on passenger satisfaction, especially when delays exceeded 30 minutes.
+---
 
-Challenges:-
-We faced several challenges during the project. The dataset lacked direct customer feedback, so we created a proxy satisfaction model using operational data. Many airport codes were missing or inconsistent, requiring manual correction. Time formats were also not standardized, and some flights lacked delay reason data. Working with a multi-year, high-volume dataset added to the complexity, especially during data merging and transformation stages.
+## Tools & Technologies
 
-Outcome:-
-Despite these challenges, the final dashboard offers a comprehensive and user-friendly view of the key performance indicators for airport operations. It empowers stakeholders to explore trends, detect performance gaps, and optimize decisions during peak travel seasons. This project demonstrates how historical operational data can be used to derive meaningful insights, even in the absence of direct customer feedback.
+| Tool | Purpose |
+|------|---------|
+| **SQL Server** | Data cleaning and transformation |
+| **Power BI** | Dashboard development and visual storytelling |
+| **Excel** | Preliminary data exploration and formatting |
 
-Project Details:-
-Course: CST2102 – Database Analytics
-Institution: Algonquin College
-Instructor: Yasser Jafer
-Team Members: Prajna Ganji, Shiva Shiva, Neetika Upadhyay, Maruta Zalane
-Date: March 7, 2025
-Tools: SQL Server, Power BI
-Data Source: Kaggle – Airline Delay and Cancellation Data
+---
+
+# Dashboard Features
+
+| Metric | Insight |
+|--------|---------|
+| **Total Flights** | Year-over-year trends and flight volumes |
+| **Delays** | Delay causes, seasonal spikes, and monthly patterns |
+| **Ground Processing Time** | Taxi-in, taxi-out, and departure delay durations |
+| **Passenger Satisfaction Score** | Estimated via proxy model based on delay and cancellation factors |
+
+---
+
+## Methodology
+
+1. **Data Understanding**: Reviewed all dataset columns and cleaned data types (converted VARCHAR to appropriate types).
+2. **Data Cleaning**: Replaced blanks with NULLs, removed unneeded columns, standardized time formats.
+3. **Transformation**: Calculated new metrics like ground processing time and proxy satisfaction scores.
+4. **Dashboard Development**: Built clear, interactive visualizations using filters and drilldowns in Power BI.
+
+---
+
+## Key Insights
+
+- **2018 saw a sharp rise in flight volume**, likely due to network expansions.
+- **Delays peaked in June, July, August, and December**, aligning with holiday travel.
+- **Average ground processing time was 59.1 minutes**, consistent with industry norms.
+- **Flights delayed >30 minutes had the lowest satisfaction scores**.
+- **Airline-caused delays/cancellations were the most damaging to satisfaction**.
+
+---
+
+## Challenges Faced
+
+- Handling inconsistent or missing airport codes
+- Estimating satisfaction without direct passenger feedback
+- Calculating ground processing time with partial records
+- Balancing data volume and dashboard performance
+
+---
+
+## Learning Outcomes
+
+- Gained hands-on experience in **data cleaning and modeling**
+- Developed custom KPIs using **proxy metrics and calculated fields**
+- Built an end-to-end Power BI dashboard to visualize trends and drive decisions
+- Improved skills in **collaborative data analysis and storytelling**
+
+---
+
+## References
+
+- [Kaggle Dataset](https://www.kaggle.com/datasets/yuanyuwendymu/airline-delay-and-cancellation-data-2009-2018)
+- [Forbes Article on 2018 Airline Trends](https://www.forbes.com/sites/danielreed/2018/04/04/airlines-subtle-domestic-growth-plans-for-2018-likely-mean-fares-wont-be-rising-this-year/)
+- [ANS Performance Data](https://www.ansperformance.eu)
+
+---
+
+## Team Members
+
+Project by students of **Algonquin College – CST2102 Database Analytics**  
+**Prajna Ganji**, **Shiva**, **Neetika Upadhyay**, **Maruta Zalane**
+
+---
+
+## Files Included
+
+- `Airport_Dashboard.pbix` – Interactive Power BI dashboard
+- `Assignment1_Technical Report.pdf` – Technical report
+- `Assignment1_Airport Data Analysis.pdf` – Slide deck
+
